@@ -8,11 +8,21 @@ const MunroData = function (){
 MunroData.prototype.bindEvents = function () {
 this.getData()
 // subscribe to select view change
-    // PubSub.subscribe('')
-// get all munros in selected region
-// publish to list view
+    PubSub.subscribe('SelectView:change', (evt)=>{
+      const selectedRegion = evt.detail;
+      this.publishMunroDetails(selectedRegion);
+    });
+  };
 
+MunroData.prototype.publishMunroDetails = function (selectedRegion) {
+  // get all munros in selected region
+  const allMunros = this.data;
+  // console.log(selectedMunros);
+  const selectedMunros = allMunros.filter(munro => munro.region === selectedRegion);
+// publish to list view
+  PubSub.publish('MunroData:selected-munros-ready', selectedMunros)
 };
+
 
 MunroData.prototype.getData = function () {
   const url = 'https://munroapi.herokuapp.com/api/munros';

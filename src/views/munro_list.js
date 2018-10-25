@@ -8,7 +8,7 @@ const MunroList = function(container){
 
 // bindEvents 'MunroData:all-data-ready', data);
 MunroList.prototype.bindEvents = function () {
-  PubSub.subscribe("MunroData:all-data-ready", ( event ) => {
+  PubSub.subscribe('MunroData:selected-munros-ready', ( event ) => {
     this.munros = event.detail;
     // this sends a list of munros to be separated into individual munros.
     this.prepare();
@@ -18,6 +18,7 @@ MunroList.prototype.bindEvents = function () {
 
 // render
 MunroList.prototype.prepare = function () {
+  this.container.innerHTML = '';
   this.munros.forEach(( munro ) => {
   const munroView = new MunroView(this.container, munro);
   // printing out the individual munros on the page.

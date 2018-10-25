@@ -10,8 +10,10 @@ SelectView.prototype.bindEvents = function () {
       this.populate(allMunros);
     });
     this.element.addEventListener('change', (event) =>{
-      const selectedIndex = event.target.value;
-      PubSub.publish('SelectView:change', selectedIndex);
+      const selectedRegion = event.target.value;
+      // console.log(event);
+      // console.log(selectedRegion);
+      PubSub.publish('SelectView:change', selectedRegion);
     });
 };
 
@@ -21,10 +23,10 @@ const regions = allMunros.map(munro => munro.region);
 const uniqueRegions = regions.filter((region, regionIndex, regionsArray) => regionsArray.indexOf(region)==regionIndex);
 
 // console.log(uniqueRegions);
-  uniqueRegions.forEach((region, index) => {
+  uniqueRegions.forEach((region) => {
     const option = document.createElement('option');
     option.textContent = region;
-    option.value = index;
+    option.value = region;
     this.element.appendChild(option);
   });
 };
