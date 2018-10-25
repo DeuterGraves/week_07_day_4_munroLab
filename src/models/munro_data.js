@@ -7,6 +7,7 @@ const MunroData = function (){
 
 MunroData.prototype.bindEvents = function () {
     // PubSub.subscribe('')
+
 };
 
 MunroData.prototype.getData = function () {
@@ -16,6 +17,7 @@ MunroData.prototype.getData = function () {
     .then(( data ) => {
      this.data = data
      PubSub.publish('MunroData:all-data-ready', data);
+     // console.log(data);
    })
    .catch(( error ) => {
       PubSub.publish('MunroData:Error', error);
