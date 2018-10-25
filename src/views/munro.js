@@ -39,12 +39,14 @@ const MunroView = function(container, munro){
 
     const meaning = document.createElement('li');
     const height = document.createElement('li');
+    const lineBreak = document.createElement('hr');
 
     meaning.textContent = `Meaning: ${this.munro.meaning}`;
     height.textContent = `Height: ${this.munro.height}`;
 
     list.appendChild(meaning);
     list.appendChild(height);
+    list.appendChild(lineBreak);
 
     return list
  };

@@ -1,0 +1,26 @@
+body {
+  background-color: #E7E8dc;
+  width: 90%;
+  margin: auto;
+}
+
+h1, h2 {
+  color: #28666e;
+  /* background-color: #fedc97; */
+}
+
+li {
+  color: #033f63;
+}
+
+hr {
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(40, 102, 110, 0), rgba(40, 102, 110, 0.75), rgba(40, 102, 110, 0));
+}
+
+#munros {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
