@@ -21,7 +21,7 @@ MunroList.prototype.prepare = function () {
   this.munros.forEach(( munro ) => {
   const munroView = new MunroView(this.container, munro);
   // printing out the individual munros on the page.
-  console.log(munro);
+  // console.log(munro);
   munroView.render();
 });
 
