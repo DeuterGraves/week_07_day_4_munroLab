@@ -6,7 +6,11 @@ const MunroData = function (){
 };
 
 MunroData.prototype.bindEvents = function () {
+this.getData()
+// subscribe to select view change
     // PubSub.subscribe('')
+// get all munros in selected region
+// publish to list view
 
 };
 
