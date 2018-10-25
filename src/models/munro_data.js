@@ -34,7 +34,7 @@ MunroData.prototype.getData = function () {
      // console.log(data);
    })
    .catch(( error ) => {
-      PubSub.publish('MunroData:Error', error);
+      PubSub.publish('Munros:Error', error);
     });
 };
 
